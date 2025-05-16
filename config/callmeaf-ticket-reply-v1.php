@@ -26,7 +26,7 @@ return [
                 // listeners
             ],
             \Callmeaf\TicketReply\App\Events\Api\V1\TicketReplyCreated::class => [
-                // listeners
+                \Callmeaf\TicketReply\App\Listeners\Api\V1\ChangeTicketStatusAfterReplyCreated::class,
             ],
             \Callmeaf\TicketReply\App\Events\Api\V1\TicketReplyShowed::class => [
                 // listeners
@@ -72,7 +72,7 @@ return [
                 // listeners
             ],
             \Callmeaf\TicketReply\App\Events\Admin\V1\TicketReplyCreated::class => [
-                // listeners
+                \Callmeaf\TicketReply\App\Listeners\Admin\V1\ChangeTicketStatusAfterReplyCreated::class,
             ],
             \Callmeaf\TicketReply\App\Events\Admin\V1\TicketReplyShowed::class => [
                 // listeners

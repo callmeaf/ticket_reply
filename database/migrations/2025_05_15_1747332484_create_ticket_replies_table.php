@@ -18,8 +18,6 @@ return new class extends Migration
              * @var \Callmeaf\Ticket\App\Repo\Contracts\TicketRepoInterface $ticketRepo
              */
             $ticketRepo = app(\Callmeaf\Ticket\App\Repo\Contracts\TicketRepoInterface::class);
-            logger($ticketRepo->getTable());
-            logger($ticketRepo->getModel()->getRouteKeyName());
             $table->string('ticket_ref_code');
             $table->foreign('ticket_ref_code')->references($ticketRepo->getModel()->getRouteKeyName())->on($ticketRepo->getTable())->cascadeOnDelete();
             /**
