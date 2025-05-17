@@ -10,6 +10,7 @@ return [
             'footer' => "Please log in to your account to view the full response.",
             'notification_subject' => "New ticket reply",
             'notification_payload' => "📬 Ticket ':title' has been replied to by :receiver_identifier.\nReference code: :ref_code",
+            "receiver_identifier" => "Support team"
         ],
     ],
 ];
