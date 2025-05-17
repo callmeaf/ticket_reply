@@ -73,6 +73,8 @@ return [
             ],
             \Callmeaf\TicketReply\App\Events\Admin\V1\TicketReplyCreated::class => [
                 \Callmeaf\TicketReply\App\Listeners\Admin\V1\ChangeTicketStatusAfterReplyCreated::class,
+                \Callmeaf\TicketReply\App\Listeners\Admin\V1\ModifyTicketReceiverToCurrentUserAfterReplyCreated::class,
+                \Callmeaf\TicketReply\App\Listeners\Admin\V1\NotifySenderTicketAfterReplyCreated::class,
             ],
             \Callmeaf\TicketReply\App\Events\Admin\V1\TicketReplyShowed::class => [
                 // listeners
