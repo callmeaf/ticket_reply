@@ -18,7 +18,7 @@ class TicketReplyStoreRequest extends FormRequest
          * @var TicketRepoInterface $ticketRepo
          */
         $ticketRepo = app(TicketRepoInterface::class);
-        $ticket = $ticketRepo->findById($this->route('ticket_ref_code'));
+        $ticket = $ticketRepo->findById($this->get('ticket_ref_code'));
 
         return $ticket->resource->canAnswer();
     }
