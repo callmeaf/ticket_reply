@@ -2,7 +2,10 @@
 
 namespace Callmeaf\TicketReply\App\Http\Requests\Api\V1;
 
+use Callmeaf\Ticket\App\Http\Resources\Api\V1\TicketResource;
+use Callmeaf\Ticket\App\Models\Ticket;
 use Callmeaf\Ticket\App\Repo\Contracts\TicketRepoInterface;
+use Callmeaf\TicketReply\App\Repo\Contracts\TicketReplyRepoInterface;
 use Callmeaf\User\App\Repo\Contracts\UserRepoInterface;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
@@ -14,7 +17,16 @@ class TicketReplyStoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        /**
+         * @var TicketReplyRepoInterface $ticketReplyRepo
+         */
+        $ticketReplyRepo = app(TicketReplyRepoInterface::class);
+        $ticketReply = $ticketReplyRepo->findById($this->route('ticket_reply'));
+        /**
+         * @var Ticket $ticket
+         */
+        $ticket = $ticketReply->resource->ticket;
+        return $ticket->canAnswer();
     }
 
     /**
