@@ -66,7 +66,7 @@ class TicketRepliedNotification extends Notification implements ShouldQueue
             'url' => explode(',',config('app.frontend_url'))[0],
             'ref_code' => $this->ticket->ref_code,
             'title' => $this->ticket->title,
-            'receiver_identifier' => $this->ticket->receiver_identifier,
+            'receiver_identifier' => $this->ticket->maskedReceiverIdentifier,
         ]);
     }
 
@@ -82,7 +82,7 @@ class TicketRepliedNotification extends Notification implements ShouldQueue
             'payload' => __('callmeaf-ticket-reply::admin_v1.mail.replied.notification_payload',[
                 'title' => $this->ticket->title,
                 'ref_code' => $this->ticket->ref_code,
-                'receiver_identifier' => $this->ticket->receiver_identifier,
+                'receiver_identifier' => $this->ticket->maskedReceiverIdentifier,
             ]),
         ];
     }
