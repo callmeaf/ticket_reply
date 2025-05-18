@@ -5,12 +5,11 @@ namespace Callmeaf\TicketReply\App\Models;
 use Callmeaf\Base\App\Models\BaseModel;
 use Callmeaf\Base\App\Models\Contracts\HasMedia;
 use Callmeaf\Base\App\Traits\Model\HasDate;
-use Callmeaf\Base\App\Traits\Model\InteractsWithMedia;
+use Callmeaf\Media\App\Traits\InteractsWithMedia;
 use Callmeaf\Ticket\App\Repo\Contracts\TicketRepoInterface;
 use Callmeaf\User\App\Repo\Contracts\UserRepoInterface;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 
 class TicketReply extends BaseModel implements HasMedia
