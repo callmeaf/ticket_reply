@@ -3,9 +3,9 @@
 namespace Callmeaf\TicketReply\App\Models;
 
 use Callmeaf\Base\App\Models\BaseModel;
-use Callmeaf\Base\App\Models\Contracts\HasMedia;
 use Callmeaf\Base\App\Traits\Model\HasDate;
 use Callmeaf\Log\App\Traits\LogsActivity;
+use Callmeaf\Media\App\Models\Contracts\HasMedia;
 use Callmeaf\Media\App\Traits\InteractsWithMedia;
 use Callmeaf\Ticket\App\Repo\Contracts\TicketRepoInterface;
 use Callmeaf\User\App\Repo\Contracts\UserRepoInterface;
